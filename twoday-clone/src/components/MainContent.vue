@@ -1,19 +1,22 @@
 <script>
 
 import Leveraging from './Leveraging.vue';
+/* import LastingImpact from './LastingImpact.vue'; */
 export default {
   name: 'MainContent',
 
   components: {
-    Leveraging
+    Leveraging,
+    /* LastingImpact, */
   }
 }
 </script>
 
 <template>
-    <div>
+   
         <Leveraging/>
-    </div>
+        <!-- <LastingImpact/> -->
+    
 </template>
 
 <style>

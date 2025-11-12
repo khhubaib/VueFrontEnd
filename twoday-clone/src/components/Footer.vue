@@ -16,7 +16,9 @@ export default {
                     </div>
 
                     <div class="g-i-t-button">
-                        <button>Get in Touch↗️</button>
+                        <a>Get in Touch
+                            <img src="/right-up.png" alt="">
+                        </a>
                     </div>
                 </div>
 
@@ -103,7 +105,7 @@ export default {
             <hr>
             <div class="options-copyright">
                 <div class="footer-row">
-                    <div>
+                    <div class="twoday-footer">
                         twoday
                     </div>
 
