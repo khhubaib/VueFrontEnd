@@ -1,13 +1,19 @@
 <script>
 
 import Leveraging from './Leveraging.vue';
-/* import LastingImpact from './LastingImpact.vue'; */
+import LastingImpact from './LastingImpact.vue';
+import DreamJob from './DreamJob.vue';
+import MeetExperts from './MeetExperts.vue';
+import LatestNews from './LatestNews.vue';
 export default {
   name: 'MainContent',
 
   components: {
     Leveraging,
-    /* LastingImpact, */
+    LastingImpact,
+    DreamJob,
+    MeetExperts,
+    LatestNews
   }
 }
 </script>
@@ -15,7 +21,10 @@ export default {
 <template>
    
         <Leveraging/>
-        <!-- <LastingImpact/> -->
+        <LastingImpact/>
+        <DreamJob/>
+        <MeetExperts/>
+        <LatestNews/>
     
 </template>
 

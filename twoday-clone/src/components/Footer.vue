@@ -5,6 +5,7 @@ export default {
 </script>
 
 <template>
+    <footer>
     <div class="footer-div">
         <div class="footer-color">
             <div class="footer-flex">
@@ -128,6 +129,7 @@ export default {
         </div>
 
     </div>
+    </footer>
 </template>
 
 <style></style>

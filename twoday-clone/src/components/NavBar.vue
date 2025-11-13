@@ -55,6 +55,7 @@ export default {
                 <a>Partners</a>
                 <a>Insights</a>
                 <a>About</a>
+                <a class="mob-menu-btn">Contact us</a>
             </div>
             
 
