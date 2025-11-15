@@ -2,73 +2,54 @@
 export default {
   name: "MeetExperts",
 
-  data(){
-    return{
-      experts:[
-        {
-          name: "Meet Frank,",
-          designation: "Enterprise Architect",
-          btn: "Meet Frank →",
-          ptag: "“I wanted to make technology matter — not just for systems, but for people”",
-          img: "/frank.jpeg"
-        },
-        {
-          name: "MeetAnne,",
-          designation: "Senior Solution Architect",
-          btn: "Read more →",
-          ptag: "“The people I met were genuinely interested in me and my experiences, not just my grades.”",
-          img: "/anne.png"
-        },
-        {
-          name: "Meet Nur,",
-          designation: "Software Designer",
-          btn: "Read more →",
-          ptag: "“I've grown here-not just as professional but as a person”",
-          img: "/nur.png"
-        },
-      ],
+  data() {
+    return {
       index: 0
-        
     };
   },
-  methods:{
-    next(){
-      this.index = (this.index+1)%this.experts.length;
+
+  methods: {
+    next() {
+      this.index = (this.index + 1) % this.experts.length;
     },
 
-    prev(){
-      this.index =(this.index - 1 + this.experts.length) % this.experts.length;
+    prev() {
+      this.index = (this.index - 1 + this.experts.length) % this.experts.length;
+    }
+  },
+
+  props: {
+    experts: {
+      type: Array,
+      required: true
     }
   }
-
-}
+};
 </script>
-
-
 
 <template>
   <div class="meet-experts-wrapper">
 
     <div class="meet-experts">
       
-      <!-- LEFT SECTION -->
+      <!-- LEFT -->
       <div class="experts-left">
         <div class="tag">
-          <span>MEET OUR EXPERTS</span>
+          <span>{{experts[index].span}}</span>
         </div>
 
         <h1 class="title">
-          {{experts[index].name}}<br />
-          {{experts[index].designation}}
+          {{ experts[index].name }}<br />
+          {{ experts[index].designation }}
         </h1>
 
-        <a class="cta-btn">{{experts[index].btn}}</a>
+        <a class="cta-btn">{{ experts[index].btn }}</a>
       </div>
 
-      <!-- RIGHT SECTION -->
+      <!-- RIGHT -->
       <div class="experts-right">
         <p class="quote">
-          {{experts[index].ptag}}
+          {{ experts[index].ptag }}
         </p>
 
         <div class="image-box">
@@ -80,8 +61,8 @@ export default {
 
     <!-- NAVIGATION -->
     <div class="navs">
-      <a class="nav-btn" @click="next">←</a>
-      <a class="nav-btn" @click="prev">→</a>
+      <a class="nav-btn" @click.prevent="next">←</a>
+      <a class="nav-btn" @click.prevent="prev">→</a>
     </div>
 
   </div>

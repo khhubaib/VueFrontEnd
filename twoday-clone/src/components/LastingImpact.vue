@@ -1,88 +1,76 @@
 <script>
 export default {
-    name: 'LastingImpact',
-data(){
-    return{
-        
-    }
-}
-}
+  name: 'LastingImpact',
+
+  // ❗ PROPS MUST BE HERE → NOT inside data()
+  props: {
+    heading: String,
+    text: String,
+    img1: String,
+    img2: String,
+    img3: String,
+    video: String,
+    span1: String,
+    span2: String,
+    span3: String,
+    div1: String,
+    div2: String,
+    div3: String
+  }
+};
 </script>
 
 <template>
-    <div class="lasting-impact">
-        <div class="last-imp-intro">
-            <div class="imp-h2">
-                <h2>Lasting Impact</h2>
-            </div>
-            <div class="imp-p">
-                <p>
-                    Every day, we apply AI and advanced engineering to solve what matters.
-                    Building solutions that improve lives across both public and private sectors.
-                </p>
-            </div>
-        </div>
+  <div class="lasting-impact" :class="{'padding-yes':div1}">
 
-        <div class="image-grid">
-            <div class="image-item">
-                <img src="/patient.jpeg" alt="Image 1" />
+    <div class="last-imp-intro">
+      <div class="imp-h2">
+        <h2>{{ heading }}</h2>
+      </div>
 
-                <div class="grid-overlay">
-
-                    <span>Päijät-Häme Welfare Region</span>
-
-
-                    <div class="grid-overlay-content">
-                        <div>
-                            Together with Päijät-Häme Welfare Region, we’re using AI to make everyday life simpler for
-                            both residents and professionals — easing workloads, improving access to care, and shaping a
-                            smarter, more human welfare service.
-                        </div>
-
-                        <a>Read more</a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-item">
-                <img src="/window.jpeg" alt="Image 2" />
-
-                <div class="grid-overlay">
-
-                    <span>ISS</span>
-
-
-                    <div class="grid-overlay-content">
-                        <div>
-                            ISS saves hundreds of hours of working time by modernizing its data platform and customer
-                            reporting.
-                        </div>
-
-                        <a>Read the Story</a>
-                    </div>
-                </div>
-            </div>
-            <div class="image-item">
-                <video src="/water.mp4" autoplay muted loop></video>
-
-                <div class="grid-overlay">
-
-                    <span>WATTN</span>
-
-
-                    <div class="grid-overlay-content">
-                        <div>
-                            A future-proof platform that brings systems together, simplifies daily work, and helps our
-                            client move faster. Because real progress starts with a solid digital foundation.
-                        </div>
-
-                        <a>Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="imp-p">
+        <p>{{ text }}</p>
+      </div>
     </div>
+
+    <div class="image-grid" v-if="div1">
+      <div class="image-item">
+        <img :src="img1" alt="Image 1" />
+        <div class="grid-overlay">
+          <span>{{ span1 }}</span>
+          <div class="grid-overlay-content">
+            <div>{{ div1 }}</div>
+            <a>Read more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-item">
+        <img :src="img2" alt="Image 2" />
+        <div class="grid-overlay">
+          <span>{{ span2 }}</span>
+          <div class="grid-overlay-content">
+            <div>{{ div2 }}</div>
+            <a>Read the Story</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-item">
+        <video v-if="video" :src="video" autoplay muted loop></video>
+        <img v-else-if="img3" :src="img3" />
+        <div class="grid-overlay">
+          <span>{{ span3 }}</span>
+          <div class="grid-overlay-content">
+            <div>{{ div3 }}</div>
+            <a>Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </template>
 
 <style>
-
 </style>

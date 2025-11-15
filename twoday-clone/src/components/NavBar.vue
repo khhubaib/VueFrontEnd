@@ -54,9 +54,9 @@ export default {
         </div>
 
         <div v-if="isOpen==true" class="mobile-menu">
-                <a>Services</a>
-                <a>Career</a>
-                <a>About</a>
+                <router-link to="/services" class="nav-atags">Services</router-link>
+                <router-link to="/career" class="nav-atags">Career</router-link>
+                <router-link to="/about" class="nav-atags">About</router-link>
                 <a class="mob-menu-btn">Contact us</a>
             </div>
             

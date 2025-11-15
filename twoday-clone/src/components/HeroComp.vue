@@ -3,24 +3,33 @@
 
 export default {
   name: 'HeroComp',
+  props:{
+    video: String,
+    heading1: String,
+    heading2: String,
+    heading3: String,
+    span: String,
+    button: String,
+    color: String
+  }
 }
 
 </script>
 
 <template>
   <section class="hero">
-    <video src="/43295-436026111_small.mp4" class="hero-video" autoplay muted loop></video>
+    <video :src="video" class="hero-video" autoplay muted loop></video>
     <div class="hero-overlay">
       <div>
-        <p class="hero-p">WHAT WE DO</p>
+        <p class="hero-p">{{ span }}</p>
       </div>
       <div class="hero-heading">
-        <h1>Applied AI.</h1>
-        <h1>Advanced Engineering.</h1>
-        <h1>Lasting Impact.</h1>
+        <h1 :class="{white:color}">{{ heading1 }}</h1>
+        <h1 :class="{white:color}">{{ heading2 }}</h1>
+        <h1 :class="{white:color}">{{ heading3 }}</h1>
       </div>
       <div class="hero-button-container">
-        <a class="hero-button">Talk to an expert
+        <a class="hero-button"  v-if="button">{{button}}
           <img src="/right-up.png" alt="">
         </a>
 

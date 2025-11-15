@@ -10,7 +10,18 @@
       HeroComp,
       MainContent,
       Footer
-    }
+    },
+     data(){
+        return{
+
+            span: "WHAT WE DO",
+            heading1: "Applied AI",
+            heading2: "Advanced Engineering",
+            heading3: "Lasting Impact",
+            button: "Talk to an expert",
+            video: "/43295-436026111_small.mp4"
+        };
+      },
   }
 </script>
 
@@ -18,7 +29,13 @@
   <div>
     
     <NavBar/>
-    <HeroComp/>
+    <HeroComp
+        :heading1="heading1"
+        :heading2="heading2"
+        :heading3="heading3"
+        :span="span"
+        :button="button"
+        :video="video"/>
     <MainContent/>
     <Footer/>
     
