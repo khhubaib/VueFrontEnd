@@ -27,13 +27,18 @@ export default {
         <div class="navbar">
             <div class="nav-left">
                 <div class="logo-container">
+
+                  <router-link to="/">
                     <img src="/logo_primary.svg" alt="logo">
+                    </router-link>
                 </div>
                 <div class="nav-options">
-                    <a>Services</a>
-                    <a>Career</a>
-                    <a>About</a>
+                    <router-link to="/services" class="nav-atags">Services</router-link>
+                    <router-link to="/career" class="nav-atags">Career</router-link>
+                    <router-link to="/about" class="nav-atags">About</router-link>
                 </div>
+
+              
             </div>
             <div class="nav-right">
                 <a>Contact us</a>
@@ -50,10 +55,7 @@ export default {
 
         <div v-if="isOpen==true" class="mobile-menu">
                 <a>Services</a>
-                <a>Clients</a>
                 <a>Career</a>
-                <a>Partners</a>
-                <a>Insights</a>
                 <a>About</a>
                 <a class="mob-menu-btn">Contact us</a>
             </div>

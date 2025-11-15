@@ -71,6 +71,11 @@ a:hover {
     font-size: 1.2rem;
 }
 
+.nav-atags{
+    color: #1b1b1b;
+    text-decoration: none;
+}
+
 .logo-container img {
     height: 1.5rem;
 
@@ -85,6 +90,10 @@ a:hover {
 .nav-right {
     display: flex;
     gap: 2rem;
+}
+
+.nav-atags:hover{
+    font-weight: bold;
 }
 
 .nav-right a {
@@ -836,7 +845,17 @@ hr {
 
 }
 }
+@media (max-width: 1124px) {
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
+@media (max-width: 640px) {
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Lasting Impact */
 
@@ -908,7 +927,7 @@ hr {
     object-fit: cover;
     /* makes sure they fill without overflowing */
     display: block;
-    transition: all 0.2s ease;
+    transition: all 0.4s ease;
     filter: brightness(0.9);
 
 }
@@ -1175,190 +1194,148 @@ hr {
 
 /* Meet Experts */
 
-.row-flex{
-    display: flex;
-    flex-direction: column;
-    padding: 64px 32px;
+.meet-experts-wrapper {
+  padding: 64px 32px;
 }
+
+/* MAIN CONTAINER */
 .meet-experts {
-    
-    height: 600px;
-    display: flex;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    background-color: #ece2da;
+  background: #ece2da;
+  padding: 40px;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  gap: 40px;
 }
 
-.experts-box1 {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    row-gap: 10px;
-    overflow: hidden;
-    word-wrap: break-word;
+/* LEFT SIDE */
+.experts-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-
-.experts-box2 {
-    width: 50%;
-    border-left: 1px solid black;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
+.tag {
+  border: 2px solid #1b1b1b;
+  border-radius: 12px;
+  padding: 5px 12px;
+  width: fit-content;
 }
 
-.box1-span {
-    border: 2px solid #1b1b1b;
-    border-radius: 15px;
-    width: fit-content;
-    padding: 3px 10px;
+.title {
+  font-size: clamp(32px, 6vw, 80px);
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
 }
 
-.experts-box1 h4 {
-    font-size: 85px;
-    font-weight: 500;
-    text-align: left;
-    padding: 0;
-    line-height: 0.9;
+.cta-btn {
+  background: rgb(250, 233, 2);
+  color: #1b1b1b;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: clamp(14px, 2vw, 22px);
+  cursor: pointer;
+  width: fit-content;
 }
 
-.box-1-btn a {
-    background-color: rgb(250, 233, 2);
+.cta-btn:hover {
+  background: #1b1b1b;
+  color: #fff;
+}
+
+/* RIGHT SIDE */
+.experts-right {
+  width: 50%;
+  border-left: 1px solid #333;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.quote {
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  margin: 0;
+}
+
+.image-box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* NAV BUTTONS */
+.navs {
+  background: #ece2da;
+  padding: 24px 32px;
+  display: flex;
+  gap: 16px;
+  border-radius: 0 0 25px 25px;
+}
+
+.nav-btn {
+  background: #1b1b1b;
+  color: #fff;
+  border: none;
+  padding: 16px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-btn:hover{
     color: #1b1b1b;
-    padding: 10px 30px;
-    border-radius: 15px;
-    font-size: 25px;
-    text-align: left;
-    text-justify: center;
-    letter-spacing: -1px;
+    background-color: #FFFFFF;
 }
 
-.box-1-btn a:hover {
-    background-color: #1b1b1b;
-    color: #FFFFFF;
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1024px) {
+  .meet-experts {
+    flex-direction: column;
+  }
+
+  .experts-left,
+  .experts-right {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .image-box img {
+    max-width: 500px;
+  }
 }
 
-.box2-img {
-    overflow: hidden;
-}
+@media (max-width: 600px) {
+  .meet-experts-wrapper {
+    padding: 32px 16px;
+  }
 
-.box2-img img {
-    object-fit: contain;
-    width: 700px;
-    border-radius: 15px;
-}
+  .cta-btn {
+    padding: 10px 20px;
+  }
 
-.experts-box2 p {
-    text-align: left;
-    font-size: 20px;
-    font-weight: 500;
-}
-.navs{
-    background-color: #ece2da;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 32px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    column-gap: 20px;
-}
+  .navs {
+    padding: 16px;
+  }
 
-.navs a{
-background-color: #1b1b1b;
-color:#FFFFFF;
-padding: 20px 10px;
-border-radius: 10px;
-}
+  .nav-btn {
+    padding: 12px 16px;
+  }
 
-
-@media(max-width:1076px){
-    .meet-experts{
-        flex-direction: column;
-    }
-
-    .experts-box1{
-        width: 100%;
-    }
-    .experts-box2{
-        width: 100%;
-    }
-.box2-img img{
-    width: 400px;
-}
-
-.experts-box1 h4 {
-    font-size: 40px;
-}
-
-.box-1-btn a {
-    font-size: 20px;
-}
-}
-
-@media(max-width:1076px){
-    .meet-experts{
-        flex-direction: column;
-    }
-
-    .experts-box1{
-        width: 100%;
-    }
-    .experts-box2{
-        width: 100%;
-    }
-.box2-img img{
-    width: 350px;
-}
-
-.experts-box1 h4 {
-    font-size: 25px;
-}
-
-.box-1-btn a {
-    font-size: 15px;
-}
-
-.experts-box2 p{
-    font-size: 12px;
-}
-
-.navs{
-    padding-top: 0;
-}
-
-.navs a{
-padding: 10px 5px;
-border-radius: 5px;
-}
-}
-
-@media(max-width:520px){
-    .box2-img img{
-        width: 220px;
-    }
-
-    .experts-box2 p{
-    font-size: 8px;
-    font-weight: 400;
-}
-
-.experts-box1{
-    overflow: hidden;
-}
-
-.experts-box2{
-    overflow: hidden;
-}
-
-.meet-experts{
-    overflow: hidden;
-}
+  .image-box img {
+    max-width: 100%;
+  }
 }
 
 /* 
@@ -1446,14 +1423,3 @@ Latest News */
 
 /* Responsive */
 
-@media (max-width: 1124px) {
-    .solution-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 640px) {
-    .solution-grid {
-        grid-template-columns: 1fr;
-    }
-}

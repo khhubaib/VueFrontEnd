@@ -5,6 +5,7 @@ import LastingImpact from './LastingImpact.vue';
 import DreamJob from './DreamJob.vue';
 import MeetExperts from './MeetExperts.vue';
 import LatestNews from './LatestNews.vue';
+import GetInTouch from './GetInTouch.vue';
 export default {
   name: 'MainContent',
 
@@ -13,7 +14,8 @@ export default {
     LastingImpact,
     DreamJob,
     MeetExperts,
-    LatestNews
+    LatestNews,
+    GetInTouch
   }
 }
 </script>
@@ -25,6 +27,7 @@ export default {
         <DreamJob/>
         <MeetExperts/>
         <LatestNews/>
+        <GetInTouch/>
     
 </template>
 

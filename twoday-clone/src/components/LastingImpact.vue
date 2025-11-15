@@ -1,6 +1,11 @@
 <script>
 export default {
     name: 'LastingImpact',
+data(){
+    return{
+        
+    }
+}
 }
 </script>
 

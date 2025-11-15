@@ -6,7 +6,7 @@ export default {
       newsItems: [
         {
           tag: "PARTNERSHIP",
-          image: "",
+          image: "/WhatsApp Image 2025-11-14 at 3.35.01 PM.jpeg",
           title: "Only the top 1% selected: Twoday joins the Microsoft Inner Circle for AI Business Solutions",
           desc: "Just three years after its founding, Twoday has been named to the Microsoft FY26 Inner Circle for AI Business Solutions – placing it among the top 1% of Microsoft’s global partners."
         },
