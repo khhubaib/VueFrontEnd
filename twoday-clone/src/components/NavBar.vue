@@ -17,6 +17,9 @@ export default {
         this.isOpen=true;
       };
     },
+    gotocontact(){
+      this.$router.push('/contact');
+    }
   },
 };
 </script>
@@ -41,7 +44,7 @@ export default {
               
             </div>
             <div class="nav-right">
-                <a>Contact us</a>
+                <a @click="gotocontact">Contact us</a>
 
                 <div class="menu-icon" @click="toggleMenu">
                     ☰
@@ -57,7 +60,7 @@ export default {
                 <router-link to="/services" class="nav-atags">Services</router-link>
                 <router-link to="/career" class="nav-atags">Career</router-link>
                 <router-link to="/about" class="nav-atags">About</router-link>
-                <a class="mob-menu-btn">Contact us</a>
+                <a class="mob-menu-btn" @click="gotocontact">Contact us</a>
             </div>
             
 

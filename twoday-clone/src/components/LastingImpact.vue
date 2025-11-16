@@ -29,7 +29,7 @@ export default {
       </div>
 
       <div class="imp-p">
-        <p>{{ text }}</p>
+        <p v-html="text"></p>
       </div>
     </div>
 

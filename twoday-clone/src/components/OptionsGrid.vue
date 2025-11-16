@@ -83,25 +83,6 @@ export default {
 </template>
 
 <style>
-.options-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 20px;
-    gap: 30px;
-    padding: 0px 32px 32px 32px;
-
-}
-
-
-
-   
-
-@media (max-width: 767px) {
-    .options-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 
 </style>

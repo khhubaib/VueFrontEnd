@@ -3,6 +3,7 @@ import LandingPage from '../components/LandingPage.vue';
 import ServicesPage from '../components/ServicesPage.vue';
 import CareerPage from '../components/CareerPage.vue';
 import AboutPage from '../components/AboutPage.vue';
+import ContactPage from '../components/ContactPage.vue';
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/about',
     name: 'AboutPage',
     component: AboutPage
+  },
+  {
+    path: '/contact',
+    name: 'ContactPage',
+    component: ContactPage
   }
 ];
 

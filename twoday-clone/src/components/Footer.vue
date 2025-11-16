@@ -17,7 +17,7 @@ export default {
                     </div>
 
                     <div class="g-i-t-button">
-                        <a>Get in Touch
+                        <a @click="this.$router.push('/contact')">Get in Touch
                             <img src="/right-up.png" alt="">
                         </a>
                     </div>
@@ -26,7 +26,7 @@ export default {
                 <div class="footer-menus">
 
                     <div class="footer-services">
-                        <a class="menu-heading">Services</a>
+                        <a class="menu-heading" @click="this.$router.push('/services')">Services</a>
 
                         <div class="menu-subheadings">
 
@@ -55,7 +55,7 @@ export default {
                     </div>
 
                     <div class="footer-career">
-                        <a class="menu-heading">Career</a>
+                        <a class="menu-heading" @click="this.$router.push('/career')">Career</a>
 
                         <div class="menu-subheadings">
 
@@ -87,7 +87,7 @@ export default {
                     </div>
 
                     <div class="footer-about">
-                        <a class="menu-heading">About</a>
+                        <a class="menu-heading" @click="this.$router.push('/about')">About</a>
 
                         <div class="menu-subheadings">
 
@@ -106,7 +106,7 @@ export default {
             <hr>
             <div class="options-copyright">
                 <div class="footer-row">
-                    <div class="twoday-footer">
+                    <div class="twoday-footer" >
                         twoday
                     </div>
 

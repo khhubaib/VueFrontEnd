@@ -7,23 +7,25 @@ export default {
         ptag1: String,
         ptag2: String,
         ptag3: String,
-        button: String
+        button: String,
+        column: String,
+        about: String
     }
 }
 </script>
 
 <template>
-    <div class="get-in-touch">
+    <div :class="{'get-in-touch': !column, 'columnform': column}">
 
-        <div class="future-text">
+        <div :class="{'future-text': !column, 'column-text': column, 'about-text': about && column}">
           
-            <div class="future-h2">
+            <div :class="{'future-h2': !column, 'column-h2': column, 'about-h2': about && column}">
                 <h2>
                     {{heading}}
                 </h2>
             </div>
 
-            <div class="future-p">
+            <div :class="{'future-p': !column, 'column-p': column}">
                 <p>
                     
                     {{ptag1}}
