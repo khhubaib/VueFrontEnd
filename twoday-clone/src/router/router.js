@@ -30,12 +30,19 @@ const routes = [
     path: '/contact',
     name: 'ContactPage',
     component: ContactPage
-  }
+  },
+
+ 
 ];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+   scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 };
+
+  }
 });
 
 export default router;

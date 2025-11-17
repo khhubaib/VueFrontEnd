@@ -19,7 +19,8 @@
             heading2: "Advanced Engineering",
             heading3: "Lasting Impact",
             button: "Talk to an expert",
-            video: "/43295-436026111_small.mp4"
+            video: "/43295-436026111_small.mp4",
+            id: "#experts"
         };
       },
   }
@@ -35,7 +36,8 @@
         :heading3="heading3"
         :span="span"
         :button="button"
-        :video="video"/>
+        :video="video"
+        :id="id"/>
     <MainContent/>
     <Footer/>
     

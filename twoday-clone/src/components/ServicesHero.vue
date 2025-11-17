@@ -18,7 +18,7 @@ export default {
         <h1>We engineer it.</h1>
       </div>
       <div class="hero-button-container">
-        <a class="hero-button">Get in touch
+        <a class="hero-button" href="#form">Get in touch
           <img src="/right-up.png" alt="">
         </a>
 

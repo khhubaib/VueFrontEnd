@@ -40,19 +40,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="footer-clients">
-                        <a class="menu-heading">Clients</a>
-
-                        <div class="menu-subheadings">
-
-                            <a>Energy & Utilities</a>
-                            <a>Industrials & Manufacturing</a>
-                            <a>Health & Life Sciences</a>
-                            <a>Government</a>
-                            <a>All Stories</a>
-
-                        </div>
-                    </div>
+                
 
                     <div class="footer-career">
                         <a class="menu-heading" @click="this.$router.push('/career')">Career</a>
@@ -67,24 +55,7 @@ export default {
                         </div>
                     </div>
 
-                    <div class="footer-partners">
-                        <a class="menu-heading">Partners</a>
-
-                        <div class="menu-subheadings">
-
-                        </div>
-                    </div>
-
-                    <div class="footer-insights">
-                        <a class="menu-heading">Insights</a>
-
-                        <div class="menu-subheadings">
-
-                            <a>Blog</a>
-                            <a>Guides & Whitepapers</a>
-
-                        </div>
-                    </div>
+                    
 
                     <div class="footer-about">
                         <a class="menu-heading" @click="this.$router.push('/about')">About</a>

@@ -31,6 +31,7 @@ export default{
             button: "Explore open positions",
             video: "/career.mp4",
             color: "white",
+            id: "#positions",
 
             heading4: "Start something big",
             ptag1: "Let's have a chat about the possibilities of the future.",
@@ -98,7 +99,8 @@ export default{
         :span="span"
         :button="button"
         :video="video"
-        :color="color"/>
+        :color="color"
+        :id="id"/>
         <PurposeProgress/>
         <OptionsGrid
         :heading1="heading6"

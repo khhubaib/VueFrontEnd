@@ -10,7 +10,8 @@ export default {
     heading3: String,
     span: String,
     button: String,
-    color: String
+    color: String,
+    id: String
   }
 }
 
@@ -29,7 +30,7 @@ export default {
         <h1 :class="{white:color}">{{ heading3 }}</h1>
       </div>
       <div class="hero-button-container">
-        <a class="hero-button"  v-if="button">{{button}}
+        <a class="hero-button"  v-if="button" :href="id" >{{button}}
           <img src="/right-up.png" alt="">
         </a>
 

@@ -28,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <div class="meet-experts-wrapper">
+  <div class="meet-experts-wrapper" id="experts">
 
     <div class="meet-experts">
       
