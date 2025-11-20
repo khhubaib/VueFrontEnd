@@ -7,6 +7,9 @@ import MeetExperts from './MeetExperts.vue';
 import Footer from './Footer.vue';
 import GetInTouch from './GetInTouch.vue';
 
+import apiClient from '../apiclient';
+import { useHead } from '@vueuse/head'
+
 export default {
   name: 'ServicesPage',
   components: {
@@ -63,8 +66,32 @@ export default {
       ptag2: "We strengthen private and public organizations across industries like energy and utilities, industrials and manufacturing, health and life sciences, and government and more.",
       ptag3: "From offices in Sweden, Denmark, Norway, Finland, and Lithuania, we combine local presence with scale that matters to deliver clarity and results that last.",
       button3: "",
+
+      page: null,
         
     };
+  },
+
+  async mounted() {
+    try {
+      const slug = 10
+      const res = await apiClient.get(`/pages/${slug}/tags`)
+      this.page = res.data
+      // Set meta dynamically
+      useHead({
+        title: this.page.tags[0].title,
+        meta: [
+          { name: 'description', content: this.page.tags[0].description },
+          { name: 'keywords', content: this.page.tags[0].keywords },
+          { name: 'robots', content: 'index, follow' },
+        ],
+        link: [
+          { rel: 'canonical', href: this.page.tags[0].canonical_url },
+        ],
+      })
+    } catch (err) {
+      console.error('Error fetching tags:', err)
+    }
   },
 };
 </script>

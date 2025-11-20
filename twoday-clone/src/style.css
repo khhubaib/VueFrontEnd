@@ -1385,3 +1385,174 @@ margin-bottom: 80px;
       width: fit-content;
     }
 }
+
+
+/* admin page  */
+
+
+.admin-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #1f1f1f; /* dark background */
+  padding: 40px 20px;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+/* Make table responsive */
+table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: collapse;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background-color: #444;
+  font-weight: bold;
+  color: #fff;
+}
+
+td {
+  background-color: #333;
+}
+
+tr:hover td {
+  background-color: #555; /* hover effect */
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Add page button */
+table > button {
+  margin: 15px 0;
+  background-color: #2196f3;
+}
+
+table > button:hover {
+  background-color: #1976d2;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #444;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #444;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #ccc;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 5px;
+
+  }
+}
+
+/* Example reusable global-style friendly classes */
+.input-field {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.btn-submit {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-submit:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.error-text {
+  color: red;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+.input-row input.input-field {
+  flex: 1; /* make inputs equally take row space */
+}
+
+.update-btn {
+  align-self: flex-start; /* button aligned left */
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  color: #1b1b1b;
+}

@@ -6,6 +6,9 @@ import GetInTouch from './GetInTouch.vue';
 import LastingImpact from './LastingImpact.vue';
 import OptionsGrid from './OptionsGrid.vue';
 import ShowStats from './ShowStats.vue';
+
+import apiClient from '../apiclient';
+import { useHead } from '@vueuse/head'
 export default{
     name: 'AboutPage',
     components:{
@@ -58,9 +61,33 @@ export default{
             padding: "yes",
 
             heading9: "Your success is our mission",
-            text3: "We work closely with you to ensure our approach aligns with your unique vision, empowering your business to thrive in an ever-changing world."
+            text3: "We work closely with you to ensure our approach aligns with your unique vision, empowering your business to thrive in an ever-changing world.",
+            
+            page: null,
         };
+    },
+
+    async mounted() {
+    try {
+      const slug = 12
+      const res = await apiClient.get(`/pages/${slug}/tags`)
+      this.page = res.data
+      // Set meta dynamically
+      useHead({
+        title: this.page.tags[0].title,
+        meta: [
+          { name: 'description', content: this.page.tags[0].description },
+          { name: 'keywords', content: this.page.tags[0].keywords },
+          { name: 'robots', content: 'index, follow' },
+        ],
+        link: [
+          { rel: 'canonical', href: this.page.tags[0].canonical_url },
+        ],
+      })
+    } catch (err) {
+      console.error('Error fetching tags:', err)
     }
+  },
 }
 </script>
 

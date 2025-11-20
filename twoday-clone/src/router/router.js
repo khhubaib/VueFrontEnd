@@ -4,6 +4,12 @@ import ServicesPage from '../components/ServicesPage.vue';
 import CareerPage from '../components/CareerPage.vue';
 import AboutPage from '../components/AboutPage.vue';
 import ContactPage from '../components/ContactPage.vue';
+import AdminPage from '../Admin/AdminPage.vue';
+import UpdatePage from '../Admin/UpdatePage.vue';
+import AddPage from '../Admin/AddPage.vue';
+import MetaTags from '../Admin/MetaTags.vue';
+import UpdateMTag from '../Admin/UpdateMTag.vue';
+import AddMTag from '../Admin/AddMTag.vue';
 
 const routes = [
   {
@@ -31,6 +37,43 @@ const routes = [
     name: 'ContactPage',
     component: ContactPage
   },
+  {
+    path: '/admin',
+    name: 'AdminPage',
+    component: AdminPage
+  },
+
+  {
+    path: '/updatepage/:id',
+    name: 'UpdatePage',
+    component: UpdatePage
+  },
+
+  {
+    path: '/addpage',
+    name: 'AddPage',
+    component: AddPage
+  },
+
+  {
+    path: '/page/:id/tags',
+    name: 'MetaTag',
+    component: MetaTags
+  },
+  
+
+  {
+    path: '/updatetag/:id',
+    name: 'UpdateMTag',
+    component: UpdateMTag
+  },
+
+  {
+    path: '/addtag/:id',
+    name: 'AddMTag',
+    component: AddMTag
+  },
+
 
  
 ];
