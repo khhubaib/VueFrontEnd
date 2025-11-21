@@ -1,109 +1,65 @@
 <script>
 import apiClient from '../apiclient';
+
 export default {
-    name: 'MetaTags',
+  name: 'MetaTags',
 
-    data() {
-        return {
-            tags: {
-                page_id: null,
-                page_name: '',
-                tags: []
-            },
-            id: ''
-        };
+  data() {
+    return {
+      id: null,  // meta tag ID from route
+      data: {
+        page_id: '',
+        title: '',
+        description: '',
+        keywords: '',
+        canonical_url: '',
+      },
+    };
+  },
+
+  methods: {
+    fetchTag() {
+      apiClient.get(`/metatags/${this.id}`)
+        .then(res => {
+          this.data = res.data; // pre-fill form
+        })
+        .catch(err => {
+          console.error("Error fetching tag:", err.response?.data || err);
+        });
     },
+    back(){
+      this.$router.push(`/admin`);
+    }
+  },
 
-    mounted() {
-        this.id = this.$route.params.id;
-        this.fetchtags(this.id);
-    },
-
-    methods: {
-        fetchtags(id) {
-            apiClient.get(`/pages/${id}/tags`)
-                .then(res => {
-                    this.tags = res.data;
-                    console.log("Fetched tags:", this.tags);
-                })
-                .catch(err => {
-                    console.error("Error loading tags:", err.response?.data || err);
-                });
-        },
-
-        updatetags(id) {
-            this.$router.push(`/updatetag/${id}`);
-        },
-
-        addtag(id) {
-            this.$router.push(`/addtag/${id}`);
-        },
-
-
-        deleteTag(id) {
-
-            apiClient.delete(`/metatags/${id}`)
-                .then(response => {
-                    console.log(response.data.message);
-                    // Refresh tag list after deletion
-                    this.fetchtags(this.id);
-                })
-                .catch(error => {
-                    console.error("Delete error:", error.response?.data || error);
-                });
-
-        },
-
-        back(){
-            this.$router.push('/admin');
-        },
-    },
-
-
-
+  mounted() {
+    this.id = this.$route.params.id;  // get ID from route
+    this.fetchTag();
+  }
 }
 </script>
 
 <template>
-    <div class="admin-container">
-        <table border="1" cellpadding="10">
-            <thead>
-                <tr>
-                    <th>Tag ID</th>
-                    <th>Page ID</th>
-                    <th>Page Name</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Keywords</th>
-                    <th>Canonical URL</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="tag in tags.tags" :key="tag.id">
-                    <td>{{ tag.id }}</td>
-                    <td>{{ tags.page_id }}</td>
-                    <td>{{ tags.page_name }}</td>
-                    <td>{{ tag.title }}</td>
-                    <td>{{ tag.description }}</td>
-                    <td>{{ tag.keywords }}</td>
-                    <td>{{ tag.canonical_url }}</td>
-                    <td><button @click="updatetags(tag.id)">Update</button></td>
-                   <td> <button @click="deleteTag(tag.id)"> Delete</button></td>
-                </tr>
-                <tr v-if="tags.tags.length === 0">
-                    <td><button  @click="addtag(id)">Add</button></td>
-                    <td><button @click="back">Back</button></td>
-                </tr>
-
-                <tr v-if="tags.tags.length !== 0">
-                    <td><button @click="back">Back</button></td>
-                </tr>
-                
-            </tbody>
-        </table>
-    </div>
+  <div class="admin-container">
+    <form class="update-form">
+      <div class="input-row">
+        <input type="text" v-model="data.page" placeholder="Page" class="input-field" disabled>
+        <input type="text" v-model="data.title" placeholder="Title" class="input-field" disabled>
+        
+      </div>
+      <div class="input-row">
+        <input type="text" v-model="data.description" placeholder="Description" class="input-field" disabled>
+        <input type="text" v-model="data.keywords" placeholder="Keywords" class="input-field" disabled>
+        
+      </div>
+      <div class="input-row">
+        <input type="text" v-model="data.canonical_url" placeholder="Canonical URL" class="input-field" disabled>
+      </div>
+      <button @click="back" class="update-btn"><i class="fa-solid fa-circle-chevron-left"></i> Back</button>
+    </form>
+  </div>
 </template>
+
+
 
 <style></style>

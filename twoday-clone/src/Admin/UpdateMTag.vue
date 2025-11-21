@@ -32,7 +32,7 @@ export default {
       apiClient.put(`/metatags/${this.id}`, this.data)
         .then(() => {
           console.log("Tag updated successfully!");
-          this.$router.push(`/page/${this.data.page_id}/tags`);
+          this.$router.push(`/admin`);
         })
         .catch(err => {
           console.error("Error updating tag:", err.response?.data || err);
@@ -40,7 +40,7 @@ export default {
     },
 
     back(){
-      this.$router.push(`/page/${this.data.page_id}/tags`)
+      this.$router.push(`/admin`)
     }
   },
 
@@ -55,17 +55,24 @@ export default {
   <div class="admin-container">
     <form class="update-form" @submit.prevent="updateTag">
       <div class="input-row">
+        <input type="text" v-model="data.page" placeholder="Page" class="input-field">
         <input type="text" v-model="data.title" placeholder="Title" class="input-field">
+        
       </div>
       <div class="input-row">
         <input type="text" v-model="data.description" placeholder="Description" class="input-field">
         <input type="text" v-model="data.keywords" placeholder="Keywords" class="input-field">
+        
       </div>
       <div class="input-row">
         <input type="text" v-model="data.canonical_url" placeholder="Canonical URL" class="input-field">
       </div>
-      <button type="submit" class="update-btn">Update</button>
-      <button @click="back" class="update-btn">Back</button>
+
+      <div class="input-row">
+        <button type="submit" class="update-btn">Submit <i class="fa-solid fa-caret-right"></i></button>
+       <button @click="back"  class="update-btn"><i class="fa-solid fa-circle-chevron-left"></i> Back </button>
+      </div>
+      
     </form>
   </div>
 </template>

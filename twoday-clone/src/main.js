@@ -6,9 +6,12 @@ import apiClient from './apiclient'
 
 
 
+
 import { createHead } from '@vueuse/head'
 
 const app = createApp(App).use(router)
 const head = createHead()
 app.use(head)
+
+
 app.mount('#app')
