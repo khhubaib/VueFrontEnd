@@ -39,7 +39,7 @@ export default {
 
     // Admin button function
     const admin = () => {
-      router.push('/admin')
+      router.push('/welcome')
     }
 
     // Reactive meta tags using useHead

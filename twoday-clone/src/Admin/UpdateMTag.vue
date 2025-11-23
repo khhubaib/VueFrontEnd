@@ -1,8 +1,13 @@
 <script>
 import apiClient from '../apiclient';
+import Sidebar from './Sidebar.vue';
 
 export default {
   name: 'UpdateMTag',
+
+  components:{
+    Sidebar,
+  },
 
   data() {
     return {
@@ -52,6 +57,7 @@ export default {
 </script>
 
 <template>
+  <Sidebar/>
   <div class="admin-container">
     <form class="update-form" @submit.prevent="updateTag">
       <div class="input-row">
