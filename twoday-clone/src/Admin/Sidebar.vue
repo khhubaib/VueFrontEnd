@@ -1,4 +1,5 @@
 <script>
+import apiClient from '../apiclient';
 export default {
   name: "Sidebar",
 
@@ -12,6 +13,14 @@ export default {
     goTo(path) {
       this.$router.push(path);
     },
+
+    logout() {
+            apiClient.post('/admin/logout').finally(() => {
+                localStorage.removeItem('admin_token');
+                localStorage.removeItem('admin_user');
+                this.$router.push('/login');
+            });
+        },
   },
 };
 </script>
@@ -59,6 +68,15 @@ export default {
       >
         <i class="fa-solid fa-tags sidebar-icon"></i>
         Meta Tags
+      </li>
+
+      <li 
+        class="sidebar-item"
+        :class="{ active: activeRoute === '/logout' }"
+        @click="logout"
+      >
+        <i class="fas fa-sign-out-alt sidebar-icon"></i>
+        Logout
       </li>
 
       

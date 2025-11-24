@@ -1,7 +1,9 @@
 <template>
+  <Sidebar />
+  <TopBar/>
   <div class="admin-container">
 
-    <Sidebar />
+    
 
     <!-- Search Bar -->
     <div class="search-bar">
@@ -55,10 +57,13 @@
 <script>
 import Sidebar from './Sidebar.vue';
 import apiClient from '../apiclient';
+import TopBar from './TopBar.vue';
 
 export default {
   name: 'TagStatus',
-  components: { Sidebar },
+  components: { Sidebar,
+    TopBar,
+   },
   data() {
     return {
       tags: [],
@@ -126,6 +131,7 @@ export default {
   display: flex;
   gap: 2rem;
   margin-bottom: 10px;
+  background-color: #FFFFFF;
 }
 
 .search-btn{

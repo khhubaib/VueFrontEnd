@@ -1393,17 +1393,18 @@ margin-bottom: 80px;
 .admin-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0px;
   align-items: center;
-  justify-content: center;
-  background-color: #1f1f1f; /* dark background */
+  justify-content: flex-start;
+  background-color: #FFFFFF; /* dark background */
   padding: 30px 20px;
-  min-height: 100vh;
-  width: calc(100%-240px);
+  min-height: 80vh;
+  width: calc(100%-280px);
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
+  color: #1b1b1b;
   margin-left: 260px;
+  margin-top: 60px;
 
 }
 
@@ -1417,6 +1418,7 @@ table {
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin: 30px auto;
+  border: 1px solid #1b1b1b;
 }
 
 th, td {
@@ -1426,24 +1428,25 @@ th, td {
 }
 
 th {
-  background-color: #444;
+  background-color: #1c1f26;
   font-weight: bold;
-  color: #fff;
+  color: #FFFFFF;
 }
 
 td {
-  background-color: #333;
+  background-color: #FFFFFF;
+  color: #1b1b1b;
 }
 
 tr:hover td {
-  background-color: #555; /* hover effect */
+  background-color: #dbd3d3; /* hover effect */
 }
 
 button {
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #4caf50;
+  background-color: #1c1f26;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -1512,6 +1515,8 @@ table > button:hover {
   border-radius: 6px;
   width: 100%;
   margin-bottom: 12px;
+  background-color: #FFFFFF;
+  color: #1b1b1b;
 }
 
 .btn-submit {
@@ -1747,12 +1752,14 @@ input{
   padding: 8px 12px;
   margin-bottom: 15px;
   width: 250px;
-  border: 1px solid #ccc;
+  border: 1px solid #1C1F26;
   border-radius: 6px;
+  background-color: #cccccc;
 }
 
 .search-bar{
     height: 50px;
+    
 }
 
 

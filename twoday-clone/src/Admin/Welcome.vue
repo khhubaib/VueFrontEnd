@@ -1,12 +1,14 @@
 <script>
 import Sidebar from './Sidebar.vue';
 import apiClient from '../apiClient';
+import TopBar from './TopBar.vue';
 
 export default {
     name: 'Welcome',
 
     components: {
         Sidebar,
+        TopBar,
     },
     data() {
         return {
@@ -25,13 +27,7 @@ export default {
     },
 
     methods: {
-        logout() {
-            apiClient.post('/admin/logout').finally(() => {
-                localStorage.removeItem('admin_token');
-                localStorage.removeItem('admin_user');
-                this.$router.push('/login');
-            });
-        },
+    
          async fetchTotalPages() {
             try {
                 const response = await apiClient.get('/tags/all'); // backend route
@@ -60,26 +56,29 @@ export default {
 <template>
     <div class="dashboard">
         <Sidebar />
-
-        <div class="admin-container">
+        
+        <div class="welcome-container">
+            <TopBar/>
             <!-- Welcome Section -->
             <div class="welcome-section">
                 <h1>Welcome</h1>
-                <h2>Hi {{ name }}!</h2>
                 <p>Use the sidebar to navigate through the dashboard.</p>
             </div>
 
             <!-- Overview Cards -->
             <div class="overview-cards">
                 <div class="card">
+                    <i class="fas fa-file-alt card-icon"></i>
                     <h3>Total Pages</h3>
                     <p>{{totalPages}}</p>
                 </div>
                 <div class="card">
+                    <i class="fa-solid fa-circle-check card-icon"></i>
                     <h3>Active Meta Tags</h3>
                     <p>{{active}}</p>
                 </div>
                 <div class="card">
+                    <i class="fa-solid fa-circle-xmark card-icon" ></i>
                     <h3>Non-active Meta Tags</h3>
                     <p>{{nactive}}</p>
                 </div>
@@ -88,14 +87,23 @@ export default {
             
         </div>
 
-        <button class="logout" @click="logout">Logout</button>
     </div>
 </template>
 
 <style>
-.admin-container {
+.welcome-container {
     margin-left: 220px; /* adjust based on sidebar width */
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100%-280px);
+    margin-left: 280px;
+    min-height: 80vh;
+}
+.welcome-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .welcome-section h1 {
@@ -113,11 +121,15 @@ export default {
     margin-top: 20px;
 }
 .card {
-    background: #4b4949;
+    background: #1c1f26;
     padding: 20px;
     border-radius: 8px;
     flex: 1;
     text-align: center;
+}
+
+.card h3,.card p{
+    color: #FFFFFF;
 }
 
 .recent-activity {
@@ -141,5 +153,10 @@ export default {
 }
 .logout:hover {
     background-color: #c0392b;
+}
+
+.card-icon{
+    color: #FFFFFF;
+    height: 50px;
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
 <div>
-<Sidebar/>  
+<Sidebar/>
+<TopBar/>  
   <div class="admin-container">
 
-
-    <h1 class="title">Meta Tags</h1>
 
     <!-- Search Bar -->
     <div class="search-bar">
@@ -13,7 +12,7 @@
       <button class="search-btn" @click="clear"><i class="fa-solid fa-xmark"></i></button>
     </div>
 
-    <table>
+    <table class="pages-table">
       <thead>
         <tr>
           <th>Page</th>
@@ -57,12 +56,14 @@
 <script>
 import Sidebar from "./Sidebar.vue";
 import apiClient from "../apiclient";
+import TopBar from './TopBar.vue';
 
 export default {
   name: "ShowMeta",
 
   components:{
     Sidebar,
+    TopBar,
   } ,
 
   data() {
@@ -143,8 +144,13 @@ export default {
 <style scoped>
 .actions-d{
   width: fit-content;
+  padding-left:0px;
+  padding-right: 0px;
 }
 
+.pages-table td{
+  padding: 10px;
+}
 .search-bar{
   display: flex;
   gap: 2rem;

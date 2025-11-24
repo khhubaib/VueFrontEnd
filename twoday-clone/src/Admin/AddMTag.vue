@@ -1,8 +1,14 @@
 <script>
 import apiClient from '../apiclient';
+import Sidebar from './Sidebar.vue';
+import TopBar from './TopBar.vue';
 
 export default {
   name: 'AddMTag',
+  components:{
+    Sidebar,
+    TopBar,
+  },
 
   data() {
     return {
@@ -53,6 +59,8 @@ export default {
 </script>
 
 <template>
+  <Sidebar/>
+  <TopBar/>
   <div class="admin-container">
     <form class="update-form" @submit.prevent="postdata">
       <div class="input-row">

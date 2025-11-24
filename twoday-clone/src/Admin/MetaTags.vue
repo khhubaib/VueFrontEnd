@@ -1,12 +1,14 @@
 <script>
 import apiClient from '../apiclient';
 import Sidebar from './Sidebar.vue';
+import TopBar from './TopBar.vue';
 
 export default {
   name: 'MetaTags',
 
   components:{
     Sidebar,
+    TopBar,
   },
 
   data() {
@@ -46,6 +48,7 @@ export default {
 
 <template>
   <sidebar/>
+  <TopBar/>
   <div class="admin-container">
     <form class="update-form">
       <div class="input-row">

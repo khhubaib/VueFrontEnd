@@ -2,12 +2,13 @@
 import apiClient from '../apiclient';
 import router from '../router/router';
 import Sidebar from './Sidebar.vue';
-
+import TopBar from './TopBar.vue';
 export default {
   name: 'AdminPage',
 
   components:{
     Sidebar,
+    TopBar,
   },
 
   data() {
@@ -105,6 +106,7 @@ export default {
 <template>
 
   <Sidebar/>
+  <TopBar/>
 
   <div class="admin-container">
 
@@ -115,16 +117,17 @@ export default {
     </div>
     
 
-    <table>
-      <tr>
+    <table class="pages-table">
+      <tr class="pages-table">
+        <th class="sr-header">Sr No.</th>
         <th class="name-h" >Page Name</th>
         <th class="actions-h" colspan="3">Actions</th>
       </tr>
 
       <tbody>
-        <tr v-for="t in tags" :key="t.id">
+        <tr v-for="(t,index) in tags" :key="t.id" class="pages-table">
 
-
+          <td class="sr-header">{{ index+1 }}</td>
           <td class="name-h" >{{ t.page }}</td>
           <td class="actions-d" ><button @click="updatepages(t.id)" class="update"><i class="fa-solid fa-pen-to-square"></i></button></td>
           <td class="actions-d"><button @click="deletepages(t.id)" class="delete"><i class="fa-solid fa-trash"></i></button></td>
@@ -134,7 +137,7 @@ export default {
 
       
     </table>
-    <button @click="addpage">Add <i class="fa-regular fa-square-plus"></i> </button>
+    <button @click="addpage" class="add-btn">Add <i class="fa-regular fa-square-plus"></i> </button>
     <div class="pagination">
       <button @click="prevPage" :disabled="currentPage === 1"><i class="fa-solid fa-backward"></i></button>
       <span>Page {{ currentPage }}</span>
@@ -153,6 +156,8 @@ export default {
 
 <style>
 
+
+
 .update{
   background-color: rgb(212, 127, 30);
 }
@@ -161,7 +166,17 @@ export default {
   background-color: rgb(134, 46, 46)
 }
 
- 
+ .pages-table td{
+  padding: 10px 20px;
+ }
+
+ .pages-table{
+  margin-bottom: 14px;
+ }
+.sr-header{
+  width: 10%;
+  border-right: 1px solid grey;
+}
 .name-h{
 width: 70%;
 border-right: 1px solid grey;
@@ -183,5 +198,12 @@ width: 15%;
 .search-btn{
   border-radius: 50%;
   padding: 0px 20px;
+}
+
+.pagination{
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 </style>
